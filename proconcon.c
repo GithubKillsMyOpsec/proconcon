@@ -1,4 +1,4 @@
-﻿/*
+/*
 スプラトゥーン3 マウスコンバーター for RaspberryPi 4b
 2022/08/28 ぬこいばらき（unvirus）
 
@@ -126,10 +126,14 @@ usb-Topre_Corporation_Realforce_108-event-kbd
 */
 //#define KEYBOARD_NAME       "Topre_Corporation_Realforce_108"
 //#define KEYBOARD_NAME       "usb-SIGMACHIP_USB_Keyboard"
-#define KEYBOARD_NAME     "usb-SINO_WEALTH_Gaming_KB"
+
+//#define KEYBOARD_NAME     "usb-SINO_WEALTH_Gaming_KB"
+#define KEYBOARD_NAME     "usb-Chicony_HP_Business_Slim_Keyboard"
 
 //#define MOUSE_NAME          "Logitech_G403_Prodigy_Gaming_Mouse"
-#define MOUSE_NAME          "usb-Logitech_G403_HERO_Gaming_Mouse"
+//#define MOUSE_NAME          "usb-Logitech_G403_HERO_Gaming_Mouse"
+#define MOUSE_NAME          "usb-Compx_2.4G_Wireless_Receiver"
+
 
 #define ROM_FILE_NAME       "./flashrom.bin"
 
