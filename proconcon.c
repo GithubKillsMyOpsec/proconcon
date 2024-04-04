@@ -54,8 +54,8 @@ ver 0.20 2024/02/03 プログラムの終了処理を調整した
 上下はジャイロの加速度と角度で判断する
 マウスの座標系とは異なるのでユーザー毎に調整が必要になる
 */
-#define X_SENSITIVITY           (17.2f)     //マウス操作、左右感度
-#define Y_SENSITIVITY           (20.2f)     //マウス操作、上下感度
+#define X_SENSITIVITY           (1.7f)     //マウス操作、左右感度
+#define Y_SENSITIVITY           (2.0f)     //マウス操作、上下感度
 #define Y_FOLLOWING             (1.00f)     //マウス操作、上下追従補正
 
 //スティック入力値
@@ -318,7 +318,7 @@ void* KeybordThread(void *p)
             //update keyboard data
             KeyMap[event.code] = event.value;
 
-            if (KeyMap[KEY_Z])
+            if (KeyMap[KEY_Q])
             {
                 //super jump to base
                 ReturnToBase = 1;
@@ -339,7 +339,7 @@ void* KeybordThread(void *p)
                 printf("MWBtnToggle=%d\n", MWBtnToggle);
             }
 
-            Slow = KeyMap[KEY_LEFTSHIFT];
+            Slow = KeyMap[KEY_Z];
 
             //debug
             //Adjust mouse sensitivity
@@ -1496,20 +1496,20 @@ void ProconInput(ProconData *pPad)
         pPad->Home = 1;
     }
 
-    if (KeyMap[KEY_E] == 1)
+    if (KeyMap[KEY_R] == 1)
     {
         //スーパージャンプ決定
         //アサリ
         pPad->A = 1;
     }
 
-    if (KeyMap[KEY_R] == 1)
+    if (KeyMap[KEY_TAB] == 1)
     {
         //マップ
         pPad->X = 1;
     }
 
-    if (KeyMap[KEY_F] == 1)
+    if (KeyMap[KEY_5] == 1)
     {
         //カモン
         pPad->Up = 1;
@@ -1540,7 +1540,7 @@ void ProconInput(ProconData *pPad)
         pPad->R = 1;
     }
 
-    if (KeyMap[KEY_G] == 1)
+    if (KeyMap[KEY_LEFTSHIFT] == 1)
     {
         //ZL
         pPad->ZL = 1;
@@ -1596,10 +1596,10 @@ void ProconInput(ProconData *pPad)
     //printf("StickR X=%d, Y=%d\n", XValGet(pPad->R_Axis), YValGet(pPad->R_Axis));
 
     //L Stick assert WASD
-    dir = KeyMap[KEY_W] << 3;
-    dir |= KeyMap[KEY_D] << 2;
-    dir |= KeyMap[KEY_S] << 1;
-    dir |= KeyMap[KEY_A];
+    dir = KeyMap[KEY_E] << 3;
+    dir |= KeyMap[KEY_F] << 2;
+    dir |= KeyMap[KEY_D] << 1;
+    dir |= KeyMap[KEY_S];
 
     StickInputL(pPad->L_Axis, dir);
 #ifdef SQUID_ROLL_ENABLE
@@ -2058,4 +2058,3 @@ EXIT:
     printf("Procon Converter exit.\n");
     return 0;
 }
-
